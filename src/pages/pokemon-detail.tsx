@@ -5,6 +5,7 @@ import POKEMONS from "../models/mock-pokemon";
 import formatDate from "../helpers/format-date";
 import formatType from "../helpers/format-type";
 
+
 type Params = { id: string };
 
 const PokemonsDetail: FunctionComponent<RouteComponentProps<Params>> = ({
@@ -20,6 +21,7 @@ const PokemonsDetail: FunctionComponent<RouteComponentProps<Params>> = ({
 		});
 	}, [match.params.id]);
 
+
 	return (
 		<div>
 			{pokemon ? (
@@ -33,6 +35,10 @@ const PokemonsDetail: FunctionComponent<RouteComponentProps<Params>> = ({
 									alt={pokemon.name}
 									style={{ width: "250px", margin: "0 auto" }}
 								/>
+                                <Link to={`/Pokemons/edit/${pokemon.id}`} className="btn btn-floating halfway-fab waves-effect waves-light">
+                                <i className="material-symbols-outlined">edit</i>
+                                </Link>
+                              
 							</div>
 							<div className="card-stacked">
 								<div className="card-content">
