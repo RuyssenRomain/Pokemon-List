@@ -1,9 +1,9 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
 import { RouteComponentProps, Link } from "react-router-dom";
 import Pokemon from "../models/pokemon";
-import POKEMONS from "../models/mock-pokemon";
 import formatDate from "../helpers/format-date";
 import formatType from "../helpers/format-type";
+import PokemonService from "../services/pokemon-service";
 
 
 type Params = { id: string };
@@ -14,11 +14,7 @@ const PokemonsDetail: FunctionComponent<RouteComponentProps<Params>> = ({
 	const [pokemon, setPokemon] = useState<Pokemon | null>(null);
 
 	useEffect(() => {
-		POKEMONS.forEach((pokemon) => {
-			if (match.params.id === pokemon.id.toString()) {
-				setPokemon(pokemon);
-			}
-		});
+	PokemonService.getPokemon(+match.params.id).then(data => setPokemon(data));//    (+ match va permettre de convertir la chaine en number pour la méthode GET)
 	}, [match.params.id]);
 
 
@@ -38,6 +34,8 @@ const PokemonsDetail: FunctionComponent<RouteComponentProps<Params>> = ({
                                 <Link to={`/Pokemons/edit/${pokemon.id}`} className="btn btn-floating halfway-fab waves-effect waves-light">
                                 <i className="material-symbols-outlined">edit</i>
                                 </Link>
+
+								
                               
 							</div>
 							<div className="card-stacked">
