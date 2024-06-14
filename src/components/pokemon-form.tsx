@@ -176,7 +176,7 @@ const PokemonForm: FunctionComponent<Props> = ({ pokemon }) => {
 		}
 	};
   const deletePokemon = () => {
-    PokemonService.deletePokmemon(pokemon).then(() => {history.push(`/pokemons`)})
+    PokemonService.deletePokemon(pokemon).then(() => {history.push(`/pokemons`)})
   } 
 
 	return (
@@ -190,7 +190,7 @@ const PokemonForm: FunctionComponent<Props> = ({ pokemon }) => {
 								alt={pokemon.name}
 								style={{ width: "250px", margin: "0 auto" }}/>
                 <span className="btn-floating halfway-fab waves-effect waves-light">
-                  <i onClick={deletePokemon} className="material-icons">delete</i>
+                  <i onClick={deletePokemon} className=" material-icons delete">delete</i>
                 </span>
 						</div>
 						<div className="card-stacked">

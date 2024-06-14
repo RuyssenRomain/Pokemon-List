@@ -19,19 +19,33 @@ export default class PokemonService {
     return fetch(`http://localhost:3001/pokemons/${pokemon.id}`, {
       method: 'PUT',
       body: JSON.stringify(pokemon),
-      headers: { 'content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json' }
     })
       .then(response => response.json())
       .catch(error => this.handleError(error));
   }
-  static deletePokmemon(pokemon: Pokemon): Promise<{}> {
+  static deletePokemon(pokemon: Pokemon): Promise<{}> {
     return fetch(`http://localhost:3001/pokemons/${pokemon.id}`, {
       method: 'DELETE',
-      headers: { 'content-type': 'application/json' }
+      headers: { 'Content-Type': 'application/json' }
     })
     .then(response => response.json())
     .catch(error => this.handleError(error));
   }
+
+  static addPokemon(pokemon: Pokemon): Promise<Pokemon> {
+    if (pokemon.created){
+      delete pokemon.created;
+    }
+
+    return fetch(`http://localhost:3001/pokemons/`, {
+      method : 'POST',
+      body: JSON.stringify(pokemon) ,
+      headers:   {'Content-Type' : 'application/json'}
+  })
+  .then(response => response.json())
+  .catch(error => this.handleError(error));
+}
 
   static isEmpty(data: Object): boolean {
     return Object.keys(data).length === 0;
