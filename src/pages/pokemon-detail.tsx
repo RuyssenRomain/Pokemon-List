@@ -14,7 +14,7 @@ const PokemonsDetail: FunctionComponent<RouteComponentProps<Params>> = ({
 	const [pokemon, setPokemon] = useState<Pokemon | null>(null);
 
 	useEffect(() => {
-	PokemonService.getPokemon(+match.params.id).then(data => setPokemon(data));//    (+ match va permettre de convertir la chaine en number pour la méthode GET)
+	PokemonService.getPokemon(+match.params.id).then(data => {console.log(data);setPokemon(data)}); // (+ match va permettre de convertir la chaine en number pour la méthode GET)
 	}, [match.params.id]);
 
 

@@ -11,16 +11,22 @@ const PokemonEdit: FunctionComponent<RouteComponentProps<Params>> = ({ match }) 
   const [pokemon, setPokemon] = useState<Pokemon|null>(null);
   
 
-	useEffect(() => {
-    PokemonService.getPokemon(+match.params.id).then(data => setPokemon(data));
-	}, [match.params.id]);
-    
+	// useEffect(() => {
+  //   PokemonService.getPokemon(+match.params.id).then(data => setPokemon(data));
+	// }, [match.params.id]);
+  useEffect(() => {
+    PokemonService.getPokemon(+match.params.id).then(data => {
+      console.log(data); // Ajoutez cette ligne pour vérifier les données
+      setPokemon(data);
+    });
+  }, [match.params.id]);
+  
   return (
     <div>
       { pokemon ? (
         <div className="row">
             <h2 className="header center">Éditer { pokemon.name }</h2>
-            <PokemonForm pokemon={pokemon}></PokemonForm>
+            <PokemonForm pokemon={pokemon} isEditForm = {true}></PokemonForm>
         </div>
       ) : (
         <h4 className="center">Aucun pokémon à afficher !</h4>
