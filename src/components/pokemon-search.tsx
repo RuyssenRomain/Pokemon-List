@@ -20,7 +20,6 @@ const PokemonSearch: FunctionComponent = () => {
 			setPokemons(pokemons));
 	};
 
-	console.log(term);
 
 	return (
 		<div className="row">
