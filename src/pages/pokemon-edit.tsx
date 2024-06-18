@@ -3,7 +3,6 @@ import { RouteComponentProps } from 'react-router-dom';
 import PokemonForm from '../components/pokemon-form';
 import Pokemon from '../models/pokemon';
 import PokemonService from '../services/pokemon-service';
-import loader from "../components/loader";
 import Loader from '../components/loader';
  
 type Params = { id: string };

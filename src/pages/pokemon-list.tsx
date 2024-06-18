@@ -4,7 +4,6 @@ import PokemonCard from '../components/pokemon-card';
 import PokemonService from '../services/pokemon-service';
 import { Link } from 'react-router-dom';
 import PokemonSearch from '../components/pokemon-search';
-import loader from '../components/loader';
 import Loader from '../components/loader';
   
 const PokemonList: FunctionComponent = () => {
