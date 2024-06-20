@@ -16,7 +16,7 @@ const App: FunctionComponent = () => {
 				<nav>
 					<div className="nav-wrapper teal">
 						<Link to="/" className="brand-logo center">
-							Pokédex
+							Pokedex/Premier-React
 						</Link>
 					</div>
 				</nav>
