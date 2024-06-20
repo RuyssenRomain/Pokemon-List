@@ -14,7 +14,7 @@ const PokemonList: FunctionComponent = () => {
   }, []);
   return (
     <div>
-      <h1 className="center">Pokédex de rom / first react</h1>
+      <h1 className="center">Tcho Pokédex</h1>
       <div className="container"> 
         <div className="row"> 
           <PokemonSearch/>
