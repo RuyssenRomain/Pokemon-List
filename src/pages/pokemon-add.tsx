@@ -9,7 +9,7 @@ const PokemonAdd: FunctionComponent = () => {
 	return (
 		<div className="row">
 			<div className="center">
-				<h2 className="headers">Ajouter un pokemon</h2>
+				<h2 className="headers">Ajouter un pokemon et si tu veux une image remplace les XXX par un chiffre</h2>
 			</div>
 			<PokemonForm pokemon={pokemon} isEditForm = {false}></PokemonForm>
 		</div>
