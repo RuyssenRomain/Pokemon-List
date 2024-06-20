@@ -186,6 +186,16 @@
       "types": [
         "Normal"
       ]
+    },
+    {
+      "id": 1718891700141,
+      "hp": 100,
+      "cp": 10,
+      "name": "inconnu",
+      "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/153.png",
+      "types": [
+        "Normal"
+      ]
     }
   ]
 }

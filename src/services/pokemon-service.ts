@@ -11,10 +11,6 @@ export default class PokemonService {
     if(this.isDev) {
       return fetch('http://localhost:3001/pokemons')
         .then(response => response.json())
-        .then(data => {
-          this.pokemons = data; // Stocke les Pokémon dans la propriété de classe
-          return data;
-        })
         .catch(error => this.handleError(error));
     }
 
@@ -93,20 +89,13 @@ export default class PokemonService {
   }
 
   static searchPokemon(term: string): Promise<Pokemon[]> {
-    if(this.isDev) {
-      return fetch(`http://localhost:3001/pokemons?q=${term}`)
-        .then(response => response.json())
-        .catch(error => this.handleError(error));
-    }
-
-    return new Promise(resolve => {
-      const filteredPokemons = this.pokemons.filter(pokemon => 
-        pokemon.name.toUpperCase().includes(term.toUpperCase())
-      );
-      resolve(filteredPokemons);
+    return new Promise((resolve) => {
+    const filteredPokemons = this.pokemons.filter(pokemon =>
+    pokemon.name.toUpperCase().includes(term.toUpperCase())
+    );
+    resolve(filteredPokemons);
     });
-  }
-
+    }
   static isEmpty(data: Object): boolean {
     return Object.keys(data).length === 0;
   }
