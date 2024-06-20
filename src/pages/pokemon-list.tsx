@@ -30,7 +30,6 @@ const PokemonList: FunctionComponent = () => {
           <i className='material-icons'>add</i>
         </Link>
       </div>
-      <div className='center'><Loader/></div>
     </div> 
   );
 }

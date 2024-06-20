@@ -141,7 +141,7 @@
       "name": "surpriseDeux",
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/101.png",
       "types": [
-        "Normal"
+        "Electrik"
       ]
     },
     {
@@ -181,7 +181,7 @@
       "id": "1718546507081",
       "hp": 100,
       "cp": 10,
-      "name": "legendtwo",
+      "name": "MiniDraco",
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/147.png",
       "types": [
         "Normal"
